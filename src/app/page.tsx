@@ -47,7 +47,7 @@ export default function Home() {
   }
   return (
     <>
-      <header className='max-w-full min-w-unit-8xl mt-24 flex justify-center  items-center gap-2'>
+      <header className='max-w-full min-w-unit-8xl mt-12 flex justify-center  items-center gap-2'>
         <Input value={search} className='max-w-8xl' onChange={(e) => {
           setSearch(e.target.value)
         }}></Input>
@@ -57,7 +57,7 @@ export default function Home() {
         {/* <Button onClick={handleLogout} color='primary' variant='flat' value="Login" className="p-2 px-10 w-auto cursor-pointer rounded-full m-auto text-white bg-gray-500 hover:text-cyan-300 transition-all" >{loading ? "Logging out..." : "Logout"}</Button> */}
       </header>
 
-      <main className="flex flex-row items-center gap-2 justify-between p-24">
+      <main className="flex flex-row items-center gap-2 justify-between">
         {gifloading == false ? currentPosts.map((item: any) => {
 
           return (
@@ -70,8 +70,8 @@ export default function Home() {
                   alt={item.title}
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <h1 className='text-3xl font-bold'>{item.title}</h1>
+              <div className="flex flex-col gap-2 max-w-1/3">
+                <h1 className='text-2xl font-bold'>{item.title}</h1>
                 <h2>@{item.username}</h2>
               </div>
             </section>
@@ -80,7 +80,7 @@ export default function Home() {
         }
         ) : <h1>Loading</h1>}
       </main>
-      <footer>
+      <footer className='p-12'>
         {data.length == 0 ? <span></span> : <Pagination postsPerPage={postsPerPage} totalposts={pagination.count} nextpaginate={
           () => {
             if (currentPage < pagination.count) {
@@ -88,13 +88,18 @@ export default function Home() {
               setCurrentPage(currentPage + 1)
             }
           }
-        } prevpaginate={
-          () => {
-            if (currentPage > 1) {
-              setCurrentPage(currentPage - 1)
+        }
+          setCurrentPages={
+            (number: any) => {
+              setCurrentPage(number)
             }
-          }
-        } />
+          } prevpaginate={
+            () => {
+              if (currentPage > 1) {
+                setCurrentPage(currentPage - 1)
+              }
+            }
+          } />
         }
       </footer>
     </>
