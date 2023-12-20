@@ -36,7 +36,7 @@ export default function Home() {
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost)
   const handleSearch = async () => {
     setGifLoading(true)
-    const url = `http://api.giphy.com/v1/gifs/search?q=${search}&api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65`
+    const url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65`
     const res = await fetch(url)
     const resJson = await res.json()
     setData(resJson.data)
