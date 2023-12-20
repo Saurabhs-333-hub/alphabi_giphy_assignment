@@ -50,10 +50,14 @@ export default function Home() {
       <header className='w-full mt-12 flex justify-center px-12  items-center gap-2'>
         <Input placeholder='Article name or Keywords' value={search} className='w-full' onChange={(e) => {
           setSearch(e.target.value)
-        }}></Input>
+        }} />
+
         <Button className='bg-black text-white p-7' onClick={() => {
           handleSearch()
-        }}>Search</Button>
+        }}>
+          Search
+        </Button>
+
         <Button onClick={handleLogout} color='primary' variant='flat' value="Login" className="p-2 px-10 w-auto cursor-pointer rounded-full m-auto text-white bg-gray-500 hover:text-cyan-300 transition-all" >{loading ? "Logging out..." : "Logout"}</Button>
       </header>
 
