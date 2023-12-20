@@ -21,9 +21,9 @@ const Login = () => {
     const router = useRouter()
     useEffect(() => {
         if (auth.currentUser) {
-            router.replace('/')
+            redirect('/')
         }
-    }, [])
+    })
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         try {

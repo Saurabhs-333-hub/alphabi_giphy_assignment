@@ -54,7 +54,7 @@ export default function Home() {
         <Button className='bg-black text-white p-7' onClick={() => {
           handleSearch()
         }}>Search</Button>
-        {/* <Button onClick={handleLogout} color='primary' variant='flat' value="Login" className="p-2 px-10 w-auto cursor-pointer rounded-full m-auto text-white bg-gray-500 hover:text-cyan-300 transition-all" >{loading ? "Logging out..." : "Logout"}</Button> */}
+        <Button onClick={handleLogout} color='primary' variant='flat' value="Login" className="p-2 px-10 w-auto cursor-pointer rounded-full m-auto text-white bg-gray-500 hover:text-cyan-300 transition-all" >{loading ? "Logging out..." : "Logout"}</Button>
       </header>
 
       <main className="flex flex-row items-center gap-2 justify-between">

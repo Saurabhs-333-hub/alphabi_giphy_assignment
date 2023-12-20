@@ -2,7 +2,7 @@
 import { Button, Card, CardFooter, Divider, Input } from '@nextui-org/react'
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
 import Modals from '@/widgets/Modals'
@@ -17,7 +17,7 @@ const Register = () => {
     const router = useRouter()
     useEffect(() => {
         if (auth.currentUser) {
-            router.replace('/')
+            redirect('/')
         }
     },)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
