@@ -47,8 +47,8 @@ export default function Home() {
   }
   return (
     <>
-      <header className='max-w-full min-w-unit-8xl mt-12 flex justify-center  items-center gap-2'>
-        <Input value={search} className='max-w-8xl' onChange={(e) => {
+      <header className='w-full mt-12 flex justify-center px-12  items-center gap-2'>
+        <Input placeholder='Article name or Keywords' value={search} className='w-full' onChange={(e) => {
           setSearch(e.target.value)
         }}></Input>
         <Button className='bg-black text-white p-7' onClick={() => {
