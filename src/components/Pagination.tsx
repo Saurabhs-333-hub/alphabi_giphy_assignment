@@ -16,7 +16,7 @@ const Pagination = ({ postsPerPage, totalposts, prevpaginate, nextpaginate }: an
             >Previous</Button>
             {
                 pageNumbers.map((number) => (
-                    <ul>
+                    <ul key={number}>
                         <li key={number}>
                             {number}
                         </li>
