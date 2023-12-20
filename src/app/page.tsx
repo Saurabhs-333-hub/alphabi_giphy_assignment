@@ -61,7 +61,7 @@ export default function Home() {
 
           return (
             <div key={item.id}>
-              <div className="flex flex-col gap-2 h-screen/2 justify-center items-center mt-24">
+              <div key={item.id} className="flex flex-col gap-2 h-screen/2 justify-center items-center mt-24">
                 <Image
                   key={item.id}
                   src={item.images.original.url}
